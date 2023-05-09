@@ -79,8 +79,12 @@ WSGI_APPLICATION = "qanda.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": environ.get("DB_NAME"),
+        "USER": environ.get("DB_USER"),
+        "PASSWORD": environ.get("DB_PASS"),
+        "HOST": "localhost",
+        "PORT": "",
     }
 }
 
