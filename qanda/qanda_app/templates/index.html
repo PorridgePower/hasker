@@ -10,6 +10,7 @@
                 <a class=" card-header" href="{{ question.id }}"> {{ question.title }} </a>
                 <div class="card-body">
                     <p class="card-text">{{ question.content|truncatechars:120 }}</p>
+                    <small class="text-muted">{{question.author}} asked {{question.pub_date |timesince}} ago</small>
                 </div>
             </div>
             {% endfor %}
